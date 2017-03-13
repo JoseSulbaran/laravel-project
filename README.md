@@ -1,4 +1,4 @@
-#Desarrollo de un proyecto basico desde cero
+#Desarrollo de una aplicación desde cero
 
 ##Lenguaje
 ```
