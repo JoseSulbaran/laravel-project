@@ -13,7 +13,7 @@ Documentación https://laravel.com/docs/5.4
 Pasos para instalar las dependencias
 
 1. Compouser https://getcomposer.org/download/
-2. Compouserhttps://getcomposer.org/doc/00-intro.md
+2. Compouser https://getcomposer.org/doc/00-intro.md
 
 ## Clonamos el repositorio
 
