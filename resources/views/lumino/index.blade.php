@@ -5,17 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lumino - Dashboard</title>
 
-<link href="css/bootstrap.min.css" rel="stylesheet">
-<link href="css/datepicker3.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
-
+{!! Html::style('css/bootstrap.min.css') !!}
+{!! Html::style('css/datepicker3.css') !!}
+{!! Html::style('css/styles.css') !!}
 <!--Icons-->
-<script src="js/lumino.glyphs.js"></script>
 
-<!--[if lt IE 9]>
-<script src="js/html5shiv.js"></script>
-<script src="js/respond.min.js"></script>
-<![endif]-->
+{!!Html::script('js/lumino.glyphs.js')!!}
+{!!Html::script('js/jquery-1.11.1.min.js')!!}
+{!!Html::script('js/bootstrap.min.js')!!}
+{!!Html::script('js/chart.min.js')!!}
+{!!Html::script('js/chart-data.js')!!}
+{!!Html::script('js/easypiechart.js')!!}
+{!!Html::script('js/easypiechart-data.js')!!}
+{!!Html::script('js/bootstrap-datepicker.js')!!}
+
+
 
 </head>
 
@@ -357,13 +361,6 @@
 		</div><!--/.row-->
 	</div>	<!--/.main-->
 
-	<script src="js/jquery-1.11.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/chart.min.js"></script>
-	<script src="js/chart-data.js"></script>
-	<script src="js/easypiechart.js"></script>
-	<script src="js/easypiechart-data.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
 	<script>
 		$('#calendar').datepicker({
 		});
