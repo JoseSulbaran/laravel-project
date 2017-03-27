@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lumino - Dashboard</title>
+<title>Proyect</title>
 
 {!! Html::style('css/bootstrap.min.css') !!}
 {!! Html::style('css/datepicker3.css') !!}
@@ -18,8 +18,6 @@
 {!!Html::script('js/easypiechart.js')!!}
 {!!Html::script('js/easypiechart-data.js')!!}
 {!!Html::script('js/bootstrap-datepicker.js')!!}
-
-
 
 </head>
 

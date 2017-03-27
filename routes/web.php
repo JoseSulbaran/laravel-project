@@ -11,13 +11,15 @@
 |
 */
 
+
 Route::get('/', function () {
-    return view('lumino.index');
+    return view('login');
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
-Route::post('/usuario/create', function () {
-    return "Prueba";
+Route::resource('/usuario', 'UsuarioController');
+
+Route::get('api', function () {
+    return "Mi Api";
 });	

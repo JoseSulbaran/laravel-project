@@ -13,7 +13,7 @@ return [
     */
 
     'name' => 'Laravel',
-
+    'DICT' => 'dist/img/',
     /*
     |--------------------------------------------------------------------------
     | Application Environment
