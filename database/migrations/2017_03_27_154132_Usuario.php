@@ -17,7 +17,7 @@ class Usuario extends Migration
             $table->increments('id');
             $table->string('nombre', 50);
             $table->string('apellido', 50);
-            $table->integer('cedula');
+            $table->bigInteger('cedula');
             $table->text('direccion');            
             $table->timestamps();
         });

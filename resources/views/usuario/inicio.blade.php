@@ -36,9 +36,9 @@
 		
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 	<div class="pull-left image">
-          <img src="{{ config('app.DICT') }}user2-160x160.jpg" class="img-circle" alt="User Image"><br><br>
-                  <center><span class="hidden-xs">Alexander Pierce</span></center>
-        </div>
+        <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image" title="{{ Auth::user()->name }}"><br><br>
+        <center><span class="hidden-xs">{{ Auth::user()->name }} </span></center>
+     </div>
 <br><br>
 <br><br>
 <br><br>
@@ -52,23 +52,13 @@
 				</a>
 				<ul class="children collapse" id="sub-item-1">
 					<li>
-						<a class="" href="{{ route('usuario.index') }}">
+						<a class=" has-icon"  href="{{ route('usuario.create') }}">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Registrar
 						</a>
 					</li>
 					<li>
-						<a class="" href="#">
+						<a class="has-icon" href="{{ route('usuario.index') }}">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Consultar
-						</a>
-					</li>
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Editar
-						</a>
-					</li>
-					<li>
-						<a class="" href="#">
-							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Elimiar
 						</a>
 					</li>					
 				</ul>
