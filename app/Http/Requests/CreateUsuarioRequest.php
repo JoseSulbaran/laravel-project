@@ -28,6 +28,8 @@ class CreateUsuarioRequest extends FormRequest
             'apellido' => 'required|max:255',
             'cedula' => 'required|numeric|unique:usuario|min:4000000|max:99999999',
             'direccion' => 'required|max:1000',            
+            'fecha' => 'required|max:10',            
+            'genero' => 'required',            
         ];
     }
 

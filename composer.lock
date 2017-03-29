@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "da2c7d1c0b21ea9fc2e03a278976d39c",
+    "content-hash": "c2a300cd33050bfac7fb54452e8861ed",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -147,6 +147,40 @@
                 "parser"
             ],
             "time": "2016-11-02T15:56:58+00:00"
+        },
+        {
+            "name": "foothing/laravel-fixture",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/foothing/laravel-fixture.git",
+                "reference": "4094d8958b79b54975ec8a8c26a4bdfda5f4ba51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/foothing/laravel-fixture/zipball/4094d8958b79b54975ec8a8c26a4bdfda5f4ba51",
+                "reference": "4094d8958b79b54975ec8a8c26a4bdfda5f4ba51",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": ">=4.0.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Foothing\\LaravelFixture": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Fabrizio Ranieri",
+                    "email": "fabrizio.ranieri@gmail.com"
+                }
+            ],
+            "description": "Lightweight fixtures for Laravel 4",
+            "time": "2015-02-16T19:21:58+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",

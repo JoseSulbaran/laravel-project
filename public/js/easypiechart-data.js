@@ -26,5 +26,4 @@ $(function() {
    });
 });
 
-$('#calendar').datepicker({
-	});
+

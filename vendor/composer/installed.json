@@ -3499,5 +3499,41 @@
         ],
         "description": "HTML and Form Builders for the Laravel Framework",
         "homepage": "http://laravelcollective.com"
+    },
+    {
+        "name": "foothing/laravel-fixture",
+        "version": "v0.1.0",
+        "version_normalized": "0.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/foothing/laravel-fixture.git",
+            "reference": "4094d8958b79b54975ec8a8c26a4bdfda5f4ba51"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/foothing/laravel-fixture/zipball/4094d8958b79b54975ec8a8c26a4bdfda5f4ba51",
+            "reference": "4094d8958b79b54975ec8a8c26a4bdfda5f4ba51",
+            "shasum": ""
+        },
+        "require": {
+            "illuminate/database": ">=4.0.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2015-02-16T19:21:58+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Foothing\\LaravelFixture": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "authors": [
+            {
+                "name": "Fabrizio Ranieri",
+                "email": "fabrizio.ranieri@gmail.com"
+            }
+        ],
+        "description": "Lightweight fixtures for Laravel 4"
     }
 ]

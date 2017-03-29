@@ -3,7 +3,7 @@
 @section('area_trabajo')
 
     @if(count($errors) > 0)
-        <div class="alert alert-info" role="alert">
+        <div class="alert bg-info" role="alert">
             @foreach($errors->all() as $error)
                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> {{ $error }} <br>
             @endforeach

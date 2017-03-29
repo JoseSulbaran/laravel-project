@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Usuario;
+use App\Genero;
 use App\Http\Requests\CreateUsuarioRequest;
 use Illuminate\Http\Request;
 use Redirect;
@@ -12,13 +13,12 @@ class UsuarioController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth', ['only' => ['create','store', 'edit', 'update', 'destroy']]);     
+        $this->middleware('auth', ['only' => ['index','create','store', 'edit', 'update', 'destroy']]);     
     }
 
 
     public function index(Request $request)
     {
-
         $users = Usuario::paginate(5);
 
         if($request->ajax()){
@@ -37,7 +37,10 @@ class UsuarioController extends Controller
             'direccion' => '',            
         ];
 
-        return view('usuario.CreateUser', compact('user'));
+        $genero = Genero::all(array('id','descripcion'));
+        
+        //$genero = [''=>''] + Genero::get()->list('id', 'sexo')->all();        
+        return view('usuario.CreateUser', compact('user','genero'));
     }
         
 
@@ -48,8 +51,12 @@ class UsuarioController extends Controller
             'nombre' => $request['nombre'],
             'apellido' => $request['apellido'],
             'cedula' => $request['cedula'],
-            'direccion' => $request['direccion']
+            'direccion' => $request['direccion'],
+            'fecha' => $request['fecha'],
+            'genero_id' => $request['genero'],
         ]);
+        //Usuario::create($request->all());
+
         Session::flash('message_create','Usuario Creado Correctamente');
         return Redirect::to('/usuario');        
     }
@@ -63,14 +70,23 @@ class UsuarioController extends Controller
 
     public function edit(Usuario $usuario)
     {
-
-        return view('usuario.EditUser',['user'=>$usuario]);
+        $genero = Genero::all(array('id','descripcion'));
+        
+        return view('usuario.EditUser',['user'=>$usuario,'genero'=>$genero]);
     }
 
 
     public function update(Request $request, Usuario $usuario)
     {
-        $usuario->fill($request->all());
+        //$usuario->fill($request->all());
+        $usuario->fill([
+            'nombre' => $request['nombre'],
+            'apellido' => $request['apellido'],
+            'cedula' => $request['cedula'],
+            'direccion' => $request['direccion'],
+            'fecha' => $request['fecha'],
+            'genero_id' => $request['genero'],
+            ]);
         $usuario->save();
         Session::flash('message_edit','Usuario Actualizado Correctamente');
         //var_dump(Session::all());

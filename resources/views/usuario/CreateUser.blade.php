@@ -1,4 +1,15 @@
 @extends('usuario.inicio')
+@section('javascript')
+<script type="text/javascript">
+  $(function() {
+    $( "#id_fecha" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      format: 'yyyy-mm-dd'
+    });
+  });
+</script>
+@endsection
 
 @section('area_trabajo')
 
