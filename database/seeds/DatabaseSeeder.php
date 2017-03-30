@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+
+		//$this->call(UsuarioSeeder::class);
+		//$this->call('UsuarioSeeder');
+	    Model::unguard();
+
+	    $seeder = [
+	    	'UsuarioSeeder',
+	    ];
+
+	    foreach($seeder as $seed ) {
+	    	$this->call($seed);
+	    }
+	    
+	    Model::reguard();    	
+
+        $this->command->info('Se cargo la data en la tablas estatis!');
     }
 }
