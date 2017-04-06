@@ -16,6 +16,8 @@ Route::get('/', function () {
     return view('login');
 });
 
+Route::get('/excel', 'UsuarioController@importExport');
+
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::resource('/usuario', 'UsuarioController');

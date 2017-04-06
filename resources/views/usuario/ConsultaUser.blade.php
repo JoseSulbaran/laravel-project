@@ -43,10 +43,11 @@
 								<td>{{$user->apellido}}</td>
 								<td>{{$user->cedula}}</td>
 								<td>{{$user->direccion}}</td>
-								<td>{{$user->genero_id}}</td>
+								<td>{{$user->genero->descripcion}}</td>
 								<td>{{$user->fecha}}</td>								
 								<td>
 								{!!link_to_route('usuario.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!}
+								<a class="btn btn-success" href="{{route('usuario.edit', $user->id)}}" role="button"><i class="fa fa-pencil-square-o"></i></a>								
 								</td>
 							</tbody>
 						@endforeach

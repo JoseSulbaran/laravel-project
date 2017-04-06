@@ -8,6 +8,7 @@ use App\Http\Requests\CreateUsuarioRequest;
 use Illuminate\Http\Request;
 use Redirect;
 use Session;
+use Excel;
 
 class UsuarioController extends Controller
 {
@@ -16,6 +17,20 @@ class UsuarioController extends Controller
         $this->middleware('auth', ['only' => ['index','create','store', 'edit', 'update', 'destroy']]);     
     }
 
+    public function importExport(){
+        $data = Usuario::all();
+        
+        Excel::create('Reporte', function($excel) use ($data) {
+
+           
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            
+            });
+
+        })->download('csv');
+    }
 
     public function index(Request $request)
     {
@@ -34,7 +49,9 @@ class UsuarioController extends Controller
             'nombre' => '',
             'apellido' => '',
             'cedula' => '',
-            'direccion' => '',            
+            'direccion' => '',   
+            'fecha' => '', 
+            'genero_id' => '',             
         ];
 
         $genero = Genero::all(array('id','descripcion'));

@@ -11,4 +11,5 @@ class Genero extends Model
     protected $fillable = [
     	'sexo', 'decripcion'
     ];    
+
 }

@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	
 	<title>Proyect</title>
-
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
 	{!! Html::style('css/bootstrap.min.css') !!}
 	{!! Html::style('css/datepicker3.css') !!}
 	
