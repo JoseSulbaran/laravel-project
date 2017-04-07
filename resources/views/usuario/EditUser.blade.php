@@ -19,17 +19,10 @@
 					{!!Form::model($user,['route'=>['usuario.update',$user],'method'=>'PUT', 'class'=> 'form-horizontal'])!!}
 						@include('usuario.forms.usr')
 					<div class="col-md-4 col-md-offset-4">
-					<table>
-						<th> {!!Form::submit('Actualizar',['class'=>'btn btn-primary'])!!} --</th>
-					{!!Form::close()!!}
-					{!!Form::open(['route'=>['usuario.destroy', $user], 'method' => 'DELETE'])!!}
-						<th> --or---- {!!Form::submit('Eliminar',['class'=>'btn btn-danger'])!!}</th>
-					{!!Form::close()!!}
-					</table>
+					 	{!!Form::submit('Actualizar',['class'=>'btn btn-primary glyphicon glyphicon-refresh'])!!}
 					</div>
 				</div>
 			</div>
   		</div>
 	</div>
-
 @endsection

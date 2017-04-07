@@ -46,8 +46,18 @@
 								<td>{{$user->genero->descripcion}}</td>
 								<td>{{$user->fecha}}</td>								
 								<td>
-								{!!link_to_route('usuario.edit', $title = 'Editar', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary'])!!}
-								<a class="btn btn-success" href="{{route('usuario.edit', $user->id)}}" role="button"><i class="fa fa-pencil-square-o"></i></a>								
+								{!!link_to_route('usuario.edit', $title = '', $parameters = $user->id, $attributes = ['class'=>'btn btn-primary fa fa-pencil-square-o']) !!}
+
+
+
+									{!!Form::open(['route'=>['usuario.destroy', $user], 'method' => 'DELETE'])!!}
+										<button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
+        									<i class="fa fa-trash-o"></i>
+        								</button>
+        								{{!! Form::button('aa', array('class' => 'btn btn-danger fa fa-trash-o', 'onClick' => 'return confirm('Estas seguro de eliminar el registro?')')) !!}}
+									{!!Form::close()!!}												
+
+								
 								</td>
 							</tbody>
 						@endforeach
@@ -58,3 +68,8 @@
         </div>
     </div>
 @endsection
+
+
+
+
+											
