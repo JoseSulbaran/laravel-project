@@ -17,6 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/excel', 'UsuarioController@importExport');
+Route::get('/pdf', 'UsuarioController@ExportPDF');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Redirect;
 use Session;
 use Excel;
+use PDF;
 
 class UsuarioController extends Controller
 {
@@ -16,6 +17,14 @@ class UsuarioController extends Controller
     public function __construct(){
         $this->middleware('auth', ['only' => ['index','create','store', 'edit', 'update', 'destroy']]);     
     }
+
+    public function ExportPDF(){
+        $users = Usuario::all();
+        $pdf = PDF::loadView('pruebaparapdf',compact('users'));
+        //return $pdf->download('pruebapdf');1
+        return $pdf->stream('pruebapdf');
+    }
+
 
     public function importExport(){
         $data = Usuario::all();
@@ -40,6 +49,9 @@ class UsuarioController extends Controller
             echo "string";
             return response()->json(view('usuario.ConsultaUser',compact('users'))->render());
         }
+        $date = date('Y-m-d');
+        print $date;
+
         return view('usuario.ConsultaUser',compact('users'));
     }
 

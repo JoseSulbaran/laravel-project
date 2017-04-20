@@ -54,7 +54,6 @@
 										<button onClick="return confirm('Eliminar registro?')" class="btn btn-danger">
         									<i class="fa fa-trash-o"></i>
         								</button>
-        								{{!! Form::button('aa', array('class' => 'btn btn-danger fa fa-trash-o', 'onClick' => 'return confirm('Estas seguro de eliminar el registro?')')) !!}}
 									{!!Form::close()!!}												
 
 								
