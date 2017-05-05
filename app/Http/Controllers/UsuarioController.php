@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Usuario;
 use App\Genero;
+use App\imagen;
 use App\Http\Requests\CreateUsuarioRequest;
 use Illuminate\Http\Request;
 use Redirect;
@@ -15,7 +16,7 @@ class UsuarioController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth', ['only' => ['index','create','store', 'edit', 'update', 'destroy']]);     
+        $this->middleware('auth', ['only' => ['index','create','store', 'edit', 'update', 'destroy', 'imagen']]);     
     }
 
     public function ExportPDF(){
@@ -40,6 +41,28 @@ class UsuarioController extends Controller
 
         })->download('csv');
     }
+
+    public function imagen(Request $request)
+    {   
+
+        return view('usuario.Imagen');
+    }
+
+    public function imagen_store(Request $request)
+    {       
+
+        return $request->file();
+        $article = new imagen($request->all());
+        $article->save();
+        //imagen::create($request->all());
+
+        //Session::flash('message_create','Artículo fue creado correctamente');
+        //return redirect::to('/imagenes/imagen');
+
+        
+    }
+
+
 
     public function index(Request $request)
     {

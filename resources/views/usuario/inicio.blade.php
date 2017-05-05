@@ -10,6 +10,8 @@
 @endsection
 
 @section('content')
+
+
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -19,7 +21,7 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> 
 						{{ Auth::user()->name }} <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li><a href="#"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
+							<li><a href="{{ route('perfil.usuario.create') }}"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Profile</a></li>
 							<li><a href="#"><svg class="glyph stroked gear"><use xlink:href="#stroked-gear"></use></svg> Settings</a></li>
 							<li> <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                document.getElementById('logout-form').submit();"> <svg class="glyph stroked cancel"><use xlink:href="#stroked-cancel"></use></svg>Logout </a></li>
@@ -35,6 +37,7 @@
 		
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 	<div class="pull-left image">
+        
         <img src="{{ asset('dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image" title="{{ Auth::user()->name }}"><br><br>
         <center><span class="hidden-xs">{{ Auth::user()->name }} </span></center>
      </div>
@@ -59,7 +62,12 @@
 						<a class="has-icon" href="{{ route('usuario.index') }}">
 							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Consultar
 						</a>
-					</li>					
+					</li>
+					<li>
+						<a class=" has-icon"  href="{{ route('imagen.imagen.create') }}">
+							<svg class="glyph stroked chevron-right"><use xlink:href="#stroked-chevron-right"></use></svg> Imagen
+						</a>
+					</li>
 				</ul>
 			</li>
 		</ul>
