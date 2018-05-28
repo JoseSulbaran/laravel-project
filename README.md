@@ -1,4 +1,4 @@
-# Desarrollo de una aplicación desde cero
+# Desarrollo de una aplicación del inicio
 
 Documentación https://laravel.com/docs/5.4
 
@@ -27,12 +27,22 @@ Pasos para instalar las dependencias
 $ cd laravel-proyecto
 ```
 
-## Correr el proyect
+## Ejecutamos el siguiente comando.
 
 ```
-laravel-proyecto$ php artisan serve
+ $ composer install
+```    
+
+## Modificamos el nombre del archivo __.env.example.__ por __.env__ y agregamos nuestras credenciales.
+
+
+## Por ultimo solo debemos generar una key para nuestra API.
+```
+$ php artisan key:generate
 ```
 
-
-
+## Listo ya podemos ejecutar nuestra API.
+```
+ $ php artisan serve
+```
 
