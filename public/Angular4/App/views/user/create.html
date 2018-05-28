@@ -1,0 +1,71 @@
+
+
+<div class="card-panel contenedor z-depth-3 ">
+	<h4 class="center-align">{{title}}</h4>
+
+	<div class="row ">
+	<form class="col s12" ng-submit="saveNote()">
+	  <div class="row">
+	    <div class="input-field col s6">
+	      <input placeholder="Placeholder" id="nombres" type="text" class="validate" ng-model="User.nombre">
+	      <label for="nombres">Nombres</label>
+	    </div>
+	    <div class="input-field col s6">
+	      <input id="apellidos" type="text" class="validate" ng-model="User.apellido">
+	      <label for="apellidos">Apellidos</label>
+	    </div>
+	  </div>
+	  <div class="row">
+	    <div class="input-field col s6">
+	      <input placeholder="Placeholder" id="cedula" type="text" class="validate" ng-model="User.cedula">
+	      <label for="cedula">Cedula</label>
+	    </div>
+	    <div class="input-field col s6">
+
+			<!--<label for="inputCreated">Input date</label>-->
+			<input input-date
+			    type="date"
+			    id="inputCreated"
+			    ng-model="currentTime"
+			    container=""
+			    format="yyyy/mm/dd"
+			    ng-model="User.fecha" />	      
+
+
+	      
+	     </div>				    
+	  </div>
+	  <div class="row">
+	    <div class="input-field">
+	      <textarea class="materialize-textarea" placeholder="Placeholder" id="direccion" type="text" class="validate" ng-model="User.direccion"></textarea>
+	      <label for="direccion">Dirección</label>
+	    </div>
+	  </div>
+	  <div class="row">
+		<div class="input-field">
+	      <input id="genero" type="text" class="validate" ng-model="User.genero_id">
+	      <label for="genero">Genero </label>
+
+  <div class="input-field col s12">
+    <select  material-select watch>
+      <option value=""  selected>Choose your option</option>
+      <option value="1">Option 1</option>
+      <option value="2">Option 2</option>
+      <option value="3">Option 3</option>
+    </select>
+    <label>Materialize Select</label>
+  </div>
+		</div>	 
+	   </div>	  
+	  <br><br><br>
+		<button class="btn waves-effect waves-light" type="submit" name="action">{{button}}
+		    <i class="material-icons right">send</i>
+		</button>
+
+
+	</form>
+	</div>
+
+
+</div>
+

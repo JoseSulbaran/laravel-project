@@ -24,6 +24,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::resource('/usuario', 'UsuarioController');
 
+Route::resource('/angular-usuario', 'AngularUserController');
+
 
 Route::group(['prefix' => 'perfil', 'as'=>'perfil.'], function () {
 

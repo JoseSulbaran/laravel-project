@@ -7,6 +7,8 @@ use App\Genero;
 use App\imagen;
 use App\Http\Requests\CreateUsuarioRequest;
 use Illuminate\Http\Request;
+
+
 use Redirect;
 use Session;
 use Excel;
@@ -16,7 +18,10 @@ class UsuarioController extends Controller
 {
 
     public function __construct(){
-        $this->middleware('auth', ['only' => ['index','create','store', 'edit', 'update', 'destroy', 'imagen']]);     
+        /*
+        $this->middleware('auth', ['only' => ['index','create','store', 'edit', 'update', 'destroy', 'imagen']]);     */
+        
+        
     }
 
     public function ExportPDF(){
@@ -76,6 +81,12 @@ class UsuarioController extends Controller
         print $date;
 
         return view('usuario.ConsultaUser',compact('users'));
+        
+        /*$users =  Usuario::all();
+
+        return response()->json($users->toArray());
+        */
+
     }
 
     public function create()
